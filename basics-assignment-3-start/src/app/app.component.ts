@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   detailsVisible = true;
+  clickTimes: number[] = [];
+  nrOfTimesClicked = 0;
 
-  toggleDetailsVisible() {
+  changeDetailsVisible() {
     this.detailsVisible = !this.detailsVisible;
+    this.clickTimes.push(++this.nrOfTimesClicked);
   }
 }

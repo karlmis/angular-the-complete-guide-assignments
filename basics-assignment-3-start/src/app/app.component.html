@@ -8,9 +8,12 @@
         <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a timestamp or simply an incrementing number)</li>
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</li>
       </ol>
-      <input type="button" class="btn-primary" value="Display Details" (click)="toggleDetailsVisible()"/>
+      <input type="button" class="btn-primary" value="Display Details" (click)="changeDetailsVisible()"/>
       <p *ngIf="detailsVisible">
         Secret Password Tuna
+      </p>
+      <p *ngFor="let click of clickTimes" [ngClass]="{extraitem: click>=5}" [ngStyle]="{color:click>=5?'white':'black'}">
+        {{click}}
       </p>
     </div>
   </div>
