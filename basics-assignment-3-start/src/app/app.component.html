@@ -12,7 +12,7 @@
       <p *ngIf="detailsVisible">
         Secret Password Tuna
       </p>
-      <p *ngFor="let click of clickTimes" [ngClass]="{extraitem: click>=5}" [ngStyle]="{color:click>=5?'white':'black'}">
+      <p *ngFor="let click of clickTimes" [ngClass]="{'blue-background': click>=5}" [ngStyle]="{color:click>=5?'white':'black'}">
         {{click}}
       </p>
     </div>
