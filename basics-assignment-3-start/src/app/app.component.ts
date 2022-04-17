@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   detailsVisible = true;
-  clickTimes: number[] = [];
+  clickTimes: Date[] = [];
 
 
   changeDetailsVisible() {
     this.detailsVisible = !this.detailsVisible;
-    this.clickTimes.push(this.clickTimes.length + 1);
+    this.clickTimes.push(new Date());
   }
 }
