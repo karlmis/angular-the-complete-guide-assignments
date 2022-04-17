@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   detailsVisible = true;
   clickTimes: number[] = [];
-  nrOfTimesClicked = 0;
+
 
   changeDetailsVisible() {
     this.detailsVisible = !this.detailsVisible;
-    this.clickTimes.push(++this.nrOfTimesClicked);
+    this.clickTimes.push(this.clickTimes.length + 1);
   }
 }
