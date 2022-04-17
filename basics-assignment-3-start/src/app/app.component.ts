@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  detailsVisible = true;
+
+  toggleDetailsVisible() {
+    this.detailsVisible = !this.detailsVisible;
+  }
 }
