@@ -15,7 +15,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, RecipesComponent, RecipeListComponent
-    , RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent
+    , RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent
+    , ShoppingEditComponent
   ],
   imports: [
     BrowserModule,
