@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
 export class AppComponent {
   shoppingList = true;
 
-  changeHeader(event: boolean) {
-    this.shoppingList = event;
+  changeHeader(event: string) {
+    this.shoppingList = event === 'shopping-list';
   }
 }

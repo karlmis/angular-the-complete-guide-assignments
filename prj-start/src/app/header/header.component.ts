@@ -5,13 +5,9 @@ import {Component, EventEmitter, Output} from '@angular/core';
   templateUrl: 'header.component.html'
 })
 export class HeaderComponent {
-  @Output() recipeEmitter = new EventEmitter<boolean>();
+  @Output() featureSelected = new EventEmitter<string>();
 
-  setRecipes() {
-    this.recipeEmitter.emit(true);
-  }
-
-  setShoppingList() {
-    this.recipeEmitter.emit(false);
+  onSelect(recipe: string) {
+    this.featureSelected.emit(recipe);
   }
 }
