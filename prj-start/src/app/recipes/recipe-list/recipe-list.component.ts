@@ -7,7 +7,7 @@ import {Recipe} from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeReceived = new EventEmitter<Recipe>();
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
 
   recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Recipe.jpg/714px-Recipe.jpg?20170213105318'),
@@ -21,6 +21,6 @@ export class RecipeListComponent implements OnInit {
   }
 
   onRecipeClicked(event: Recipe) {
-    this.recipeReceived.emit(event);
+    this.recipeWasSelected.emit(event);
   }
 }
