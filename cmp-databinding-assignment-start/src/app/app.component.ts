@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  oddNumbers: number [] = [];
+  evenNumbers: number [] = [];
+
+  handleEvent(event: number) {
+    if (event % 2 === 1) {
+      this.oddNumbers.push(event);
+    } else {
+      this.evenNumbers.push(event);
+    }
+  }
 }
