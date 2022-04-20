@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -6,11 +6,15 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./server-element.component.css']
 })
 export class ServerElementComponent implements OnInit {
-  @Input('srvElement') element: {type: string, name: string, content: string};
+  @Input('srvElement') element: { type: string, name: string, content: string };
 
-  constructor() { }
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    console.log('paragraph:', this.paragraph);
   }
 
 }
