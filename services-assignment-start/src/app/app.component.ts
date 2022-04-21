@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {UserService} from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
+  activeUsers: string[] = [];
+  inactiveUsers: string[] = [];
+
+
+  constructor(private userService: UserService) {
+    this.activeUsers = userService.activeUsers;
+    this.inactiveUsers = userService.inactiveUsers;
+  }
 
   onSetToInactive(id: number) {
     this.inactiveUsers.push(this.activeUsers[id]);
