@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  @ViewChild('f') signupForm: NgForm;
+  subscription = 'Advanced';
 
+  ngOnInit(): void {
+  }
+
+  onClick() {
+    console.log(this.signupForm.form.value);
+  }
 }
