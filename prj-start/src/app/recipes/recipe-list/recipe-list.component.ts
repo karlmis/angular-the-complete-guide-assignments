@@ -10,11 +10,10 @@ import {Subscription} from 'rxjs';
 })
 export class RecipeListComponent implements OnInit, OnDestroy {
   recipes: Recipe[];
+  private subscription: Subscription;
 
   constructor(private recipeService: RecipeService) {
   }
-
-  private subscription: Subscription;
 
   ngOnInit(): void {
     this.recipes = this.recipeService.getRecipes();
